@@ -4,11 +4,13 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from rogue_copilot.engine.loader import get_model
 from rogue_copilot.server.routes import router
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
+    get_model()
     yield
 
 
