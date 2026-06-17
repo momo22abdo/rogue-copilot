@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rogue-copilot"
+version = "0.1.0"
+description = "A production-grade local AI coding assistant."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "The Rogue Copilot Contributors" }
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "mypy",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["rogue_copilot*"]
